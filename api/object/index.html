@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://mattscy.github.io/MagicAPI/api/magic/">
+        <link rel="canonical" href="https://mattscy.github.io/MagicAPI/api/object/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
-        <title>Magic - My Docs</title>
+        <title>Object - My Docs</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#magic" class="md-skip">
+        <a href="#object" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Magic
+              Object
             
           </span>
         </div>
@@ -212,14 +212,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       <label class="md-nav__link" for="__nav_2">
         API
@@ -235,58 +233,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Magic
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../magic/" class="md-nav__link">
         Magic
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
-    Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#events" class="md-nav__link">
-    Events
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -316,28 +267,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
-    Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#events" class="md-nav__link">
-    Events
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -348,47 +277,60 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mattscy/MagicAPI/edit/master/docs/api/magic/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mattscy/MagicAPI/edit/master/docs/api/object/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="magic">Magic</h1>
-<p>The <code>Magic</code> class is the core class of the system. It manages your mana and provides all the functions that you can use to manipulate objects in the game. Mana is a measurement of your magical potential, similarly to how stamina is a measurement of physical potential. You can spend mana to achieve all kinds of magical effects.</p>
-<p>Most of the functions in the <code>Magic</code> class cost an amount of mana depending on the arguments that you give. For example, the <code>Magic:Fling</code> function can be used to fling an object by temporarily setting its velocity. However, using a velocity with a larger magnitude will cost more mana. It is also important keep in mind that using functions on enemy objects is often more expensive than using the same functions on friendly objects.</p>
-<p>This class also lets you retrieve the Character object that represents your character using the <code>Mana:GetMyCharacter</code> function. Your script will only run after your character is completely loaded every time you respawn, so you don't have to worry about waiting for anything.</p>
-<h2 id="functions">Functions</h2>
-<p><code>Character</code> <a href="../GetMyCharacter/"><code>GetMyCharacter()</code></a></p>
-<p>[<code>Object</code>] <code>CreateObject(string name, [Object relativeTo, (Vector3|CFrame) offset])</code></p>
-<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">Object</span><span class="o">]</span><span class="w"> </span><span class="n">GetObject</span><span class="p">(</span><span class="n">HitDetails</span><span class="w"> </span><span class="n">hitObjectDetails</span><span class="p">)</span><span class="w"></span>
+                <h1 id="object">Object</h1>
+<p>All objects that you can manipulate in the game are inherited from the <code>Object</code> class. Models, parts and characters are all examples of objects that you can use magic on. An object can either be classified as "friendly" if it belongs to you or one of your teammates, "enemy" if it belongs to a player on another team, and "neutral" otherwise.</p>
+<p>After a certain amount of time passes, an object will expire, and you can no longer call its methods or use it in the <code>Magic</code> class. The lifetime of an object is different depending on how it is obtained:
+- If obtained from the <code>Magic:GetObject</code> function, the object will expire after any yield.
+- If obtained from the <code>Magic:GetLingeringObject</code> function, the object will expire after the returned subscription is cancelled.
+- Any objects will expire after they are destroyed.</p>
+<p>However, some <code>HitDetails</code> objects have an associated lifetime that will be used instead of the above conditions. For example, the <code>HitDetails</code> that is obtained from <code>Magic:GetRadiusDetectionSignal</code> when <code>entered</code> is true will give an object that expires after the object leaves the radius, rather than after an amount of time.</p>
+<p><strong>Functions</strong></p>
+<div class="codehilite"><pre><span></span><code>Vector3 GetSize()
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>Subscription, Object GetLingeringObject(HitDetails hitObjectDetails)
+<div class="codehilite"><pre><span></span><code>Vector3 GetVelocity()
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>void ChargeDamage(Object object, int amount)
+<div class="codehilite"><pre><span></span><code>CFrame GetCFrame()
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>Subscription Follow(Object object, Object target, (Vector3|CFrame) offset)
+<div class="codehilite"><pre><span></span><code>string GetName()
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>Subscription SetVelocity(Object object, Vector3 velocity) 
+<div class="codehilite"><pre><span></span><code>bool IsType(string type)
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>Subscription Watch(Object pointing, (Object|Mouse) target, [(Vector3|CFrame) targetOffset])
+<div class="codehilite"><pre><span></span><code>bool IsExpired()
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>void LookAt(Object pointing, (Object|Mouse) target, [(Vector3|CFrame) targetOffset])
+<div class="codehilite"><pre><span></span><code>bool IsEnemy()
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="n">Fling</span><span class="p">(</span><span class="n">Object</span> <span class="n">object</span><span class="p">,</span> <span class="n">Vector3</span> <span class="n">velocity</span><span class="p">,</span> <span class="p">[</span><span class="kt">float</span> <span class="n">duration</span><span class="p">])</span>
+<div class="codehilite"><pre><span></span><code>bool IsFriendly()
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">Subscription</span><span class="p">,</span> <span class="n">RBXScriptSignal</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">bool</span> <span class="n">entered</span><span class="p">,</span> <span class="n">HitDetails</span> <span class="n">detectedDetails</span><span class="p">)</span> <span class="n">GetRadiusDetectionSignal</span><span class="p">(</span><span class="n">Object</span> <span class="n">detecting</span><span class="p">,</span> <span class="n">float</span> <span class="n">radius</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>bool IsNeutral()
 </code></pre></div>
 
-<h2 id="events">Events</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">ManaChanged</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">int</span> <span class="n">currentMana</span><span class="p">,</span> <span class="n">int</span> <span class="n">maxMana</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>bool IsMine()
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>Object GetSubObject(string name)
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>AnimationTrack LoadAnimation(int animationID)
+</code></pre></div>
+
+<p><strong>Events</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">Expiring</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">bool</span> <span class="n">wasDestroyed</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">Touched</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">HitDetails</span> <span class="n">touchedObjectDetails</span><span class="p">)</span>
 </code></pre></div>
                 
               
@@ -405,26 +347,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Home
-            </div>
-          </div>
-        </a>
-      
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
