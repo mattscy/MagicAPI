@@ -6,18 +6,12 @@ Most of the functions in the `Magic` class cost an amount of mana depending on t
 This class also lets you retrieve the Character object that represents your character using the `Mana:GetMyCharacter` function. Your script will only run after your character is completely loaded every time you respawn, so you don't have to worry about waiting for anything.
 
 ## Functions
+`Character` [`GetMyCharacter()`](../GetMyCharacter/)
 
-
-
-| `Character` [`GetMyCharacter()`](../GetMyCharacter.md) |
-| - |
-| Gets the character  |
+[`Object`] `CreateObject(string name, [Object relativeTo, (Vector3|CFrame) offset])`
 
 ```
-Object CreateObject(string name, [Object relativeTo, (Vector3|CFrame) offset])
-```
-```
-Object GetObject(HitDetails hitObjectDetails)
+[Object] GetObject(HitDetails hitObjectDetails)
 ```
 ```
 Subscription, Object GetLingeringObject(HitDetails hitObjectDetails)
@@ -48,3 +42,5 @@ Subscription, RBXScriptSignal -> (bool entered, HitDetails detectedDetails) GetR
 ```
 ManaChanged -> (int currentMana, int maxMana)
 ```
+
+[`Object`]: ../../Object/index.md
