@@ -11,6 +11,8 @@ nav:
   - Home: index.md
   - API:
     - Magic: api/magic/index.md
+      - GetMyCharacter: api/magic/GetMyCharacter.md
+    - Object: api/object/index.md
 
 
 markdown_extensions:
