@@ -11,3 +11,8 @@ nav:
   - Home: index.md
   - API:
     - Magic: api/magic/index.md
+
+
+markdown_extensions:
+  - admonition
+  - codehilite
