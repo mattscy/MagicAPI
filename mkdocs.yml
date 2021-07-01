@@ -3,4 +3,5 @@ site_url: https://mattscy.github.io/MagicAPI
 repo_name: mattscy/MagicAPI
 repo_url: https://github.com/mattscy/MagicAPI
 
-theme: readthedocs
+theme:
+  name: material
