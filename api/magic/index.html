@@ -212,14 +212,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       <label class="md-nav__link" for="__nav_2">
         API
@@ -235,58 +233,47 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Magic
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="./" class="md-nav__link">
         Magic
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+    </li>
+  
+
+          
+            
   
   
   
-    
+    <li class="md-nav__item">
+      <a href="../object/" class="md-nav__link">
+        Object
+      </a>
+    </li>
+  
+
+          
+            
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
-    Functions
-  </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#events" class="md-nav__link">
-    Events
-  </a>
+    <li class="md-nav__item">
+      <a href="../subscription/" class="md-nav__link">
+        Subscription
+      </a>
+    </li>
   
-</li>
-      
-    </ul>
+
+          
+            
   
-</nav>
-      
+  
+  
+    <li class="md-nav__item">
+      <a href="../hitdetails/" class="md-nav__link">
+        HitDetails
+      </a>
     </li>
   
 
@@ -358,38 +345,30 @@
 <p>Most of the functions in the <code>Magic</code> class cost an amount of mana depending on the arguments that you give. For example, the <code>Magic:Fling</code> function can be used to fling an object by temporarily setting its velocity. However, using a velocity with a larger magnitude will cost more mana. It is also important keep in mind that using functions on enemy objects is often more expensive than using the same functions on friendly objects.</p>
 <p>This class also lets you retrieve the Character object that represents your character using the <code>Mana:GetMyCharacter</code> function. Your script will only run after your character is completely loaded every time you respawn, so you don't have to worry about waiting for anything.</p>
 <h2 id="functions">Functions</h2>
-<p><code>Character</code> <a href="../GetMyCharacter/"><code>GetMyCharacter()</code></a></p>
-<p>[<code>Object</code>] <code>CreateObject(string name, [Object relativeTo, (Vector3|CFrame) offset])</code></p>
-<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">Object</span><span class="o">]</span><span class="w"> </span><span class="n">GetObject</span><span class="p">(</span><span class="n">HitDetails</span><span class="w"> </span><span class="n">hitObjectDetails</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>Subscription, Object GetLingeringObject(HitDetails hitObjectDetails)
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>void ChargeDamage(Object object, int amount)
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>Subscription Follow(Object object, Object target, (Vector3|CFrame) offset)
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>Subscription SetVelocity(Object object, Vector3 velocity) 
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>Subscription Watch(Object pointing, (Object|Mouse) target, [(Vector3|CFrame) targetOffset])
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>void LookAt(Object pointing, (Object|Mouse) target, [(Vector3|CFrame) targetOffset])
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="n">Fling</span><span class="p">(</span><span class="n">Object</span> <span class="n">object</span><span class="p">,</span> <span class="n">Vector3</span> <span class="n">velocity</span><span class="p">,</span> <span class="p">[</span><span class="kt">float</span> <span class="n">duration</span><span class="p">])</span>
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">Subscription</span><span class="p">,</span> <span class="n">RBXScriptSignal</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">bool</span> <span class="n">entered</span><span class="p">,</span> <span class="n">HitDetails</span> <span class="n">detectedDetails</span><span class="p">)</span> <span class="n">GetRadiusDetectionSignal</span><span class="p">(</span><span class="n">Object</span> <span class="n">detecting</span><span class="p">,</span> <span class="n">float</span> <span class="n">radius</span><span class="p">)</span>
-</code></pre></div>
-
+<p><code>Character</code><a href="./GetMyCharacter/"><code>GetMyCharacter</code></a><code>()</code><br />
+Returns an object that represents your character.</p>
+<p><a href="../object/"><code>Object</code></a><code>CreateObject(string name, [</code><a href="../object/"><code>Object</code></a><code>relativeTo, (Vector3|CFrame) offset])</code><br />
+Creates a new object from a name.</p>
+<p><a href="../object/"><code>Object</code></a><code>GetObject(</code><a href="../hitdetails/"><code>HitDetails</code></a><code>hitObjectDetails)</code><br />
+Returns an object from a HitDetails that expires immediately.</p>
+<p><a href="../subscription/"><code>Subscription</code></a><code>,</code><a href="../object/"><code>Object</code></a><code>GetLingeringObject(HitDetails hitObjectDetails)</code><br />
+Returns an object from a HitDetails that expires after the subscription is cancelled.</p>
+<p><code>void ChargeDamage(</code><a href="../object/"><code>Object</code></a><code>object, int amount)</code><br />
+Charges an object with an amount of damage.</p>
+<p><a href="../subscription/"><code>Subscription</code></a><code>Follow(</code><a href="../object/"><code>Object</code></a><code>object, Object target, (Vector3|CFrame) offset)</code><br />
+Makes an object follow a target object at a constant offset.</p>
+<p><a href="../subscription/"><code>Subscription</code></a><code>SetVelocity(</code><a href="../object/"><code>Object</code></a><code>object, Vector3 velocity)</code><br />
+Gives an object a constant velocity until the subscription is cancelled.</p>
+<p><a href="../subscription/"><code>Subscription</code></a><code>Watch(</code><a href="../object/"><code>Object</code></a><code>pointing, (</code><a href="../object/"><code>Object</code></a><code>|Mouse) target, [(Vector3|CFrame) targetOffset])</code><br />
+Makes an object point towards another object until the subscription is cancelled.</p>
+<p><code>void LookAt(</code><a href="../object/"><code>Object</code></a><code>pointing, (</code><a href="../object/"><code>Object</code></a><code>|Mouse) target, [(Vector3|CFrame) targetOffset])</code><br />
+Makes an object point towards another object.</p>
+<p><code>void Fling(</code><a href="../object/"><code>Object</code></a><code>object, Vector3 velocity, [float duration])</code><br />
+Gives an object an instantaneous thrust that overrides all other forces until the duration passes.</p>
+<p><a href="../subscription/"><code>Subscription</code></a><code>, RBXScriptSignal -&gt; (bool entered,</code><a href="../hitdetails/"><code>HitDetails</code></a><code>detectedDetails) GetRadiusDetectionSignal(</code><a href="../object/"><code>Object</code></a><code>detecting, float radius)</code><br />
+Returns an event that fires when something enters the radius of an object until the subscription is cancelled.</p>
 <h2 id="events">Events</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">ManaChanged</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">int</span> <span class="n">currentMana</span><span class="p">,</span> <span class="n">int</span> <span class="n">maxMana</span><span class="p">)</span>
-</code></pre></div>
+<p><code>ManaChanged -&gt; (int currentMana, int maxMana)</code></p>
                 
               
               
@@ -405,26 +384,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Home
-            </div>
-          </div>
-        </a>
-      
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

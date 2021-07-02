@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://mattscy.github.io/MagicAPI/api/object/">
+        <link rel="canonical" href="https://mattscy.github.io/MagicAPI/api/hitdetails/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
-        <title>Object - My Docs</title>
+        <title>HitDetails - My Docs</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#object" class="md-skip">
+        <a href="#hitdetails" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Object
+              HitDetails
             
           </span>
         </div>
@@ -247,7 +247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./" class="md-nav__link">
+      <a href="../object/" class="md-nav__link">
         Object
       </a>
     </li>
@@ -271,7 +271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hitdetails/" class="md-nav__link">
+      <a href="./" class="md-nav__link">
         HitDetails
       </a>
     </li>
@@ -316,13 +316,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#events" class="md-nav__link">
-    Events
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -335,35 +328,19 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mattscy/MagicAPI/edit/master/docs/api/object/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mattscy/MagicAPI/edit/master/docs/api/hitdetails/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="object">Object</h1>
-<p>All objects that you can manipulate in the game are inherited from the <code>Object</code> class. Models, parts and characters are all examples of objects that you can use magic on. An object can either be classified as "friendly" if it belongs to you or one of your teammates, "enemy" if it belongs to a player on another team, and "neutral" otherwise.</p>
-<p>After a certain amount of time passes, an object will expire, and you can no longer call its methods or use it in the <code>Magic</code> class. The lifetime of an object is different depending on how it is obtained:
-- If obtained from the <code>Magic:GetObject</code> function, the object will expire after any yield.
-- If obtained from the <code>Magic:GetLingeringObject</code> function, the object will expire after the returned subscription is cancelled.
-- Any objects will expire after they are destroyed.</p>
-<p>However, some <code>HitDetails</code> objects have an associated lifetime that will be used instead of the above conditions. For example, the <code>HitDetails</code> that is obtained from <code>Magic:GetRadiusDetectionSignal</code> when <code>entered</code> is true will give an object that expires after the object leaves the radius, rather than after an amount of time.</p>
+                <h1 id="hitdetails">HitDetails</h1>
+<p>A <code>HitDetails</code> instance is given whenever you detect another object, such as through the <code>Touched</code> event. The purpose of this class is to let you check the details of an object that you have detected before you decide to pay for a reference to it. If you do decide that you want a reference, you can pay for the object with the <code>Magic:GetObject</code> or <code>Magic:GetLingeringObject</code> methods. For balancing reasons, <code>HitDetails</code> instances expire as soon as there is any yield, so you can't wait before getting an object from a <code>HitDetails</code>.</p>
 <h2 id="functions">Functions</h2>
-<p><code>Vector3 GetSize()</code>  </p>
-<p><code>Vector3 GetVelocity()</code></p>
-<p><code>CFrame GetCFrame()</code></p>
-<p><code>string GetName()</code></p>
-<p><code>bool IsType(string type)</code></p>
-<p><code>bool IsExpired()</code></p>
 <p><code>bool IsEnemy()</code></p>
 <p><code>bool IsFriendly()</code></p>
-<p><code>bool IsNeutral()</code></p>
+<p><code>bool IsTerrain()</code></p>
 <p><code>bool IsMine()</code></p>
-<p><a href="../object/"><code>Object</code></a><code>GetSubObject(string name)</code><br />
-Gets a sub-object thats inside of the object (e.g. a part that is inside a model).</p>
-<p><code>AnimationTrack LoadAnimation(int animationID)</code></p>
-<h2 id="events">Events</h2>
-<p><code>Expiring -&gt; (bool wasDestroyed)</code></p>
-<p><code>Touched -&gt; (</code><a href="../hitdetails/"><code>HitDetails</code></a><code>touchedObjectDetails)</code></p>
+<p><code>bool IsType(string type)</code></p>
                 
               
               
