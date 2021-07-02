@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://mattscy.github.io/MagicAPI/api/magic/GetMyCharacter/">
+        <link rel="canonical" href="https://mattscy.github.io/MagicAPI/api/magic/GetSphereDetectionSignal/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
-        <title>GetMyCharacter - My Docs</title>
+        <title>Magic:GetSphereDetectionSignal - My Docs</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#getmycharacter" class="md-skip">
+        <a href="#magicgetspheredetectionsignal" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GetMyCharacter
+              Magic:GetSphereDetectionSignal
             
           </span>
         </div>
@@ -303,6 +303,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mana" class="md-nav__link">
+    Mana
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-samples" class="md-nav__link">
+    Code Samples
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -313,12 +349,71 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mattscy/MagicAPI/edit/master/docs/api/magic/GetMyCharacter.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mattscy/MagicAPI/edit/master/docs/api/magic/GetSphereDetectionSignal.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="getmycharacter">GetMyCharacter</h1>
+                <h1 id="magicgetspheredetectionsignal">Magic:GetSphereDetectionSignal</h1>
+<p>This function allows you to detect and use objects that are within a certain radius from a specified object. While the subscription is active, the returned <code>RBXScriptSignal</code> will fire for any object that enters or leaves the radius, giving you the <a href="../../hitdetails/"><code>HitDetails</code></a> of that object.</p>
+<p>The <a href="../../hitdetails/"><code>HitDetails</code></a> that is provided when an object enters the radius is different to normal <a href="../../hitdetails/"><code>HitDetails</code></a>. You must use <code>Magic:GetObject</code> to get the object from this <a href="../../hitdetails/"><code>HitDetails</code></a> (as opposed to <code>Magic:GetLingeringObject</code>), and rather than expiring immediately, the object will only expire after it leaves the radius again. This allows you to use any object freely as long as it is within the radius of the detection sphere.</p>
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detecting</code></td>
+<td><a href="../../object/"><code>Object</code></a></td>
+<td></td>
+<td>The position of this object is the centre of the detection sphere.</td>
+</tr>
+<tr>
+<td><code>radius</code></td>
+<td><code>float</code></td>
+<td></td>
+<td>The radius of the detection sphere.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="returns">Returns</h2>
+<table>
+<thead>
+<tr>
+<th>Return Type</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../subscription/"><code>Subscription</code></a></td>
+<td>When this subscription is cancelled, the <code>RBXScriptSignal</code> will no longer fire.</td>
+</tr>
+<tr>
+<td><code>RBXScriptSignal</code></td>
+<td>This event will fire every time an object enters or leaves the radius of the sphere. If fired when the object enters, any object retrieved from the <a href="../../hitdetails/"><code>HitDetails</code></a> will expire when the object leaves the radius. If fired when the object leaves, the object retrieved from the <a href="../../hitdetails/"><code>HitDetails</code></a> will act normally.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mana">Mana</h2>
+<p>Mana is charged at a rate while the subscription is active.</p>
+<h2 id="code-samples">Code Samples</h2>
+<p>The following code heals an object while it is within the detection sphere radius:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">local</span> <span class="n">detectSub</span><span class="p">,</span> <span class="n">detectionSignal</span> <span class="o">=</span> <span class="n">Magic</span><span class="p">:</span><span class="n">GetSphereDetectionSignal</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+
+<span class="n">detectionSignal</span><span class="p">:</span><span class="n">Connect</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">hitDetails</span><span class="p">,</span> <span class="n">entered</span><span class="p">)</span>
+    <span class="kr">if</span> <span class="n">entered</span> <span class="kr">then</span>
+        <span class="kd">local</span> <span class="n">detectedObject</span> <span class="o">=</span> <span class="n">Magic</span><span class="p">:</span><span class="n">GetObject</span><span class="p">(</span><span class="n">hitDetails</span><span class="p">)</span>
+        <span class="kd">local</span> <span class="n">healSub</span> <span class="o">=</span> <span class="n">Magic</span><span class="p">:</span><span class="n">Heal</span><span class="p">(</span><span class="n">detectedObject</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1">--This subscription will be automatically cancelled when the object leaves the radius, as detectedObject will expire.</span>
+    <span class="kr">end</span>
+<span class="kr">end</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

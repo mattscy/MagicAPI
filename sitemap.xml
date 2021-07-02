@@ -21,7 +21,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mattscy.github.io/MagicAPI/api/magic/GetMyCharacter/</loc>
+         <loc>https://mattscy.github.io/MagicAPI/api/magic/GetSphereDetectionSignal/</loc>
          <lastmod>2021-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
