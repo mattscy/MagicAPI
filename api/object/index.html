@@ -348,7 +348,10 @@
 - Any objects will expire after they are destroyed.</p>
 <p>However, some <a href="../hitdetails/"><code>HitDetails</code></a> objects have an associated lifetime that will be used instead of the above conditions. For example, the <a href="../hitdetails/"><code>HitDetails</code></a> that is obtained from <code>Magic:GetRadiusDetectionSignal</code> when <code>entered</code> is true will give an object that expires after the object leaves the radius, rather than after an amount of time.</p>
 <h2 id="functions">Functions</h2>
-<p><code>Vector3 GetSize()</code>  </p>
+<p><code>float</code><a href="./GetSize/"><code>GetSize</code></a><code>()</code><br />
+Returns the size of the object based on its diagonal width.</p>
+<p><code>Vector3 GetDimensions()</code><br />
+Returns the length, height and width of the object.</p>
 <p><code>Vector3 GetVelocity()</code></p>
 <p><code>CFrame GetCFrame()</code></p>
 <p><code>string GetName()</code></p>

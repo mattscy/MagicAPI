@@ -16,12 +16,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://mattscy.github.io/MagicAPI/api/magic/Fling/</loc>
+         <lastmod>2021-07-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://mattscy.github.io/MagicAPI/api/magic/GetMyCharacter/</loc>
          <lastmod>2021-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mattscy.github.io/MagicAPI/api/object/</loc>
+         <lastmod>2021-07-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://mattscy.github.io/MagicAPI/api/object/GetSize/</loc>
          <lastmod>2021-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
