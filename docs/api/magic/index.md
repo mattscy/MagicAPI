@@ -6,7 +6,7 @@ Most of the functions in the `Magic` class cost an amount of mana depending on t
 This class also lets you retrieve the Character object that represents your character using the `Mana:GetMyCharacter` function. Your script will only run after your character is completely loaded every time you respawn, so you don't have to worry about waiting for anything.
 
 ## Functions
-`Character `[`GetMyCharacter`](./GetMyCharacter/)`()`  
+`Character GetMyCharacter()`  
 Returns an object that represents your character.
 
 [`Object`][obj]` CreateObject(string name, [`[`Object`][obj]` relativeTo, (Vector3|CFrame) offset])`  
@@ -33,11 +33,14 @@ Makes an object point towards another object until the subscription is cancelled
 `void LookAt(`[`Object`][obj]` pointing, (`[`Object`][obj]`|Mouse) target, [(Vector3|CFrame) targetOffset])`  
 Makes an object point towards another object.
 
-`void `[Fling](./Fling/)`(`[`Object`][obj]` object, Vector3 velocity, [float duration])`  
+`void `[`Fling`](./Fling/)`(`[`Object`][obj]` object, Vector3 velocity, [float duration])`  
 Gives an object an instantaneous thrust that overrides all other forces until the duration passes.
 
-[`Subscription`][sub]`, RBXScriptSignal -> (bool entered, `[`HitDetails`][hit]` detectedDetails) GetRadiusDetectionSignal(`[`Object`][obj]` detecting, float radius)`  
+[`Subscription`][sub]`, RBXScriptSignal -> (bool entered, `[`HitDetails`][hit]` detectedDetails)  `[`GetSphereDetectionSignal`](./GetSphereDetectionSignal/)`(`[`Object`][obj]` detecting, float radius)`  
 Returns an event that fires when something enters the radius of an object until the subscription is cancelled.
+
+`void Overdrive(bool enabled)`  
+Allows health to be spent as mana when enabled.
 
 ## Events
 `ManaChanged -> (int currentMana, int maxMana)`
