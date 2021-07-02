@@ -9,7 +9,11 @@ After a certain amount of time passes, an object will expire, and you can no lon
 However, some [`HitDetails`][hit] objects have an associated lifetime that will be used instead of the above conditions. For example, the [`HitDetails`][hit] that is obtained from `Magic:GetRadiusDetectionSignal` when `entered` is true will give an object that expires after the object leaves the radius, rather than after an amount of time.
 
 ## Functions
-`Vector3 GetSize()`  
+`float `[`GetSize`](./GetSize/)`()`  
+Returns the size of the object based on its diagonal width.
+
+`Vector3 GetDimensions()`  
+Returns the length, height and width of the object.
 
 `Vector3 GetVelocity()`
 
