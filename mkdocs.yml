@@ -10,9 +10,10 @@ theme:
 nav:
   - Home: index.md
   - API:
-    - Magic: api/magic/index.md
-      - GetMyCharacter: api/magic/GetMyCharacter.md
-    - Object: api/object/index.md
+    - Magic: api/magic/
+    - Object: api/object/
+    - Subscription: api/subscription/
+    - HitDetails: api/hitdetails/
 
 
 markdown_extensions:

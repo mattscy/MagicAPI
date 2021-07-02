@@ -8,47 +8,36 @@ After a certain amount of time passes, an object will expire, and you can no lon
 
 However, some `HitDetails` objects have an associated lifetime that will be used instead of the above conditions. For example, the `HitDetails` that is obtained from `Magic:GetRadiusDetectionSignal` when `entered` is true will give an object that expires after the object leaves the radius, rather than after an amount of time.
 
-__Functions__
-```
-Vector3 GetSize()
-```
-```
-Vector3 GetVelocity()
-```
-```
-CFrame GetCFrame()
-```
-```
-string GetName()
-```
-```
-bool IsType(string type)
-```
-```
-bool IsExpired()
-```
-```
-bool IsEnemy()
-```
-```
-bool IsFriendly()
-```
-```
-bool IsNeutral()
-```
-```
-bool IsMine()
-```
-```
-Object GetSubObject(string name)
-```
-```
-AnimationTrack LoadAnimation(int animationID)
-```
-__Events__
-```
-Expiring -> (bool wasDestroyed)
-```
-```
-Touched -> (HitDetails touchedObjectDetails)
-```
+## Functions
+`Vector3 GetSize()`  
+
+`Vector3 GetVelocity()`
+
+`CFrame GetCFrame()`
+
+`string GetName()`
+
+`bool IsType(string type)`
+
+`bool IsExpired()`
+
+`bool IsEnemy()`
+
+`bool IsFriendly()`
+
+`bool IsNeutral()`
+
+`bool IsMine()`
+
+[`Object`][obj]` GetSubObject(string name)`  
+Gets a sub-object thats inside of the object (e.g. a part that is inside a model).
+
+`AnimationTrack LoadAnimation(int animationID)`
+
+## Events
+`Expiring -> (bool wasDestroyed)`
+
+`Touched -> (`[`HitDetails`][hit]` touchedObjectDetails)`
+
+[obj]: ../object/
+[hit]: ../hitdetails/
