@@ -5,12 +5,16 @@
 
 2. If any of the objects you are using the function on expire, the subscription will be cancelled. 
 
-3. If you don't have enough mana left to pay for a subscription, it will be cancelled.  
+3. If your mana runs out, all active subscriptions will be cancelled.  
 
 4. When you reuse the same function on the same object, it will cancel the previous subscription. In this case, the `overridden` parameter of `Subscription.Cancelled` will be set to true.
 
 ## Functions
-`void Cancel()`
+`void Cancel()`  
+Cancels the subscription, which ends the effect of the subscription and stops charging mana for the subscription.
+
+`void CancelIn(duration)`  
+Cancels the subscription after the duration passes. 
 
 `bool IsCancelled()`
 

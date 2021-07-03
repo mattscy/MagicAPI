@@ -12,10 +12,10 @@ Returns an object that represents your character.
 [`Object`][obj]` CreateObject(string name, [`[`Object`][obj]` relativeTo, (Vector3|CFrame) offset])`  
 Creates a new object from a name.
 
-[`Object`][obj]` GetObject(`[`HitDetails`][hit]` hitObjectDetails)`  
+[`Object`][obj] [`GetObject`](./GetObject/)`(`[`HitDetails`][hit]` hitObjectDetails)`  
 Returns an object from a HitDetails that expires immediately.
 
-[`Subscription`][sub]`, `[`Object`][obj]` GetLingeringObject(HitDetails hitObjectDetails)`  
+[`Subscription`][sub]`, `[`Object`][obj] [`GetLingeringObject`](./GetLingeringObject/)`(`[`HitDetails`][hit]` hitObjectDetails)`  
 Returns an object from a HitDetails that expires after the subscription is cancelled.
 
 `void ChargeDamage(`[`Object`][obj]` object, int amount)`  

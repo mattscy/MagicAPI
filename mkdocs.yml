@@ -18,4 +18,5 @@ nav:
 
 markdown_extensions:
   - admonition
-  - codehilite
+  - pymdownx.highlight
+  - pymdownx.superfences

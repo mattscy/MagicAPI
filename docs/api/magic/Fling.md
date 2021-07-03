@@ -11,7 +11,11 @@ Fling can be used to set the velocity of an object instantaneously rather than a
 ## Mana
 Larger objects and higher velocities cost more mana.
 ```lua
-return object:GetSize()*velocity.Magnitude
+local cost = object:GetSize()*velocity.Magnitude
+if object:IsEnemy() then
+    cost *= 2
+end
+return cost
 ```
 
 [obj]: ../../object/

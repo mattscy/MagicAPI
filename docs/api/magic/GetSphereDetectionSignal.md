@@ -23,7 +23,7 @@ The following code heals an object while it is within the detection sphere radiu
 ```lua
 local detectSub, detectionSignal = Magic:GetSphereDetectionSignal(object)
 
-detectionSignal:Connect(function(hitDetails, entered)
+detectionSignal:Connect(function(entered, hitDetails)
     if entered then
         local detectedObject = Magic:GetObject(hitDetails)
         local healSub = Magic:Heal(detectedObject, 10) --This subscription will be automatically cancelled when the object leaves the radius, as detectedObject will expire.
