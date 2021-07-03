@@ -9,21 +9,21 @@
       
       
       
-        <link rel="canonical" href="https://mattscy.github.io/MagicAPI/api/object/">
+        <link rel="canonical" href="https://mattscy.github.io/MagicAPI/api/magic/CreateObject/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
-        <title>Object - My Docs</title>
+        <title>CreateObject - My Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ca7ac06f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
         
       
     
@@ -55,7 +55,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
   
     
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#object" class="md-skip">
+        <a href="#createobject" class="md-skip">
           Skip to content
         </a>
       
@@ -74,7 +74,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href="../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Object
+              CreateObject
             
           </span>
         </div>
@@ -167,7 +167,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -199,7 +199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -235,7 +235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../magic/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Magic
       </a>
     </li>
@@ -247,7 +247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./" class="md-nav__link">
+      <a href="../../object/" class="md-nav__link">
         Object
       </a>
     </li>
@@ -259,7 +259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../subscription/" class="md-nav__link">
+      <a href="../../subscription/" class="md-nav__link">
         Subscription
       </a>
     </li>
@@ -271,7 +271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hitdetails/" class="md-nav__link">
+      <a href="../../hitdetails/" class="md-nav__link">
         HitDetails
       </a>
     </li>
@@ -310,15 +310,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
-    Functions
+  <a href="#parameters" class="md-nav__link">
+    Parameters
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#events" class="md-nav__link">
-    Events
+  <a href="#returns" class="md-nav__link">
+    Returns
   </a>
   
 </li>
@@ -335,41 +335,68 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mattscy/MagicAPI/edit/master/docs/api/object/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mattscy/MagicAPI/edit/master/docs/api/magic/CreateObject.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="object">Object</h1>
-<p>All objects that you can manipulate with your magic are inherited from the <a href="../object/"><code>Object</code></a> class. Models, parts and characters are all examples of objects that you can use magic on. An object can either be classified as "friendly" if it belongs to you or one of your teammates, "enemy" if it belongs to a player on another team, or "neutral" otherwise.</p>
-<p>After a certain amount of time passes, an object will expire, and you can no longer call its methods or use it in the <a href="../magic/"><code>Magic</code></a> class. The lifetime of an object is different depending on how it is obtained:</p>
+                <h1 id="createobject">CreateObject</h1>
+<p>This function finds an instance in your "Objects" folder with the given name and turns it into an object. The type of instance will determine which kind of object it becomes:</p>
 <ul>
-<li>If obtained from the <a href="../magic/GetObject/"><code>Magic:GetObject</code></a> function, the object will expire after any yield.</li>
-<li>If obtained from the <a href="../magic/GetLingeringObject/"><code>Magic:GetLingeringObject</code></a> function, the object will expire after the returned subscription is cancelled.</li>
-<li>Any objects will expire after they are destroyed.</li>
-<li>If the object belongs to you, it will not expire until it is destroyed.</li>
+<li>Instances that are a <code>BasePart</code> will return an object of the <code>Part</code> class.</li>
+<li>Instances that are a <code>Model</code> will<ul>
+<li>Return an object of the <code>Character</code> class if the instance contains a <code>Humanoid</code>.</li>
+<li>Return an object of the <code>Model</code> class otherwise.</li>
 </ul>
-<p>However, some <a href="../hitdetails/"><code>HitDetails</code></a> objects have an associated lifetime that will be used instead of the above conditions. For example, the <a href="../hitdetails/"><code>HitDetails</code></a> that is obtained from <a href="../magic/GetSphereDetectionSignal/"><code>Magic:GetSphereDetectionSignal</code></a> when <code>entered</code> is true will give an object that expires after the object leaves the radius, rather than after an amount of time.</p>
-<h2 id="functions">Functions</h2>
-<p><code>float</code><a href="./GetSize/"><code>GetSize</code></a><code>()</code><br />
-Returns the size of the object based on its diagonal width.</p>
-<p><code>Vector3 GetDimensions()</code><br />
-Returns the length, height and width of the object.</p>
-<p><code>Vector3 GetVelocity()</code></p>
-<p><code>CFrame GetCFrame()</code></p>
-<p><code>string GetName()</code></p>
-<p><code>bool IsType(string type)</code></p>
-<p><code>bool IsExpired()</code></p>
-<p><code>bool IsEnemy()</code></p>
-<p><code>bool IsFriendly()</code></p>
-<p><code>bool IsNeutral()</code></p>
-<p><code>bool IsMine()</code></p>
-<p><a href="../object/"><code>Object</code></a><code>GetSubObject(string name)</code><br />
-Gets a sub-object thats inside of the object (e.g. a part that is inside a model).</p>
-<p><code>AnimationTrack LoadAnimation(int animationID)</code></p>
-<h2 id="events">Events</h2>
-<p><code>Expiring -&gt; (bool wasDestroyed)</code></p>
-<p><code>Touched -&gt; (</code><a href="../hitdetails/"><code>HitDetails</code></a><code>touchedObjectDetails)</code></p>
+</li>
+</ul>
+<p>The <code>Part</code>, <code>Character</code> and <code>Model</code> classes all inherit from the <a href="../../object/"><code>Object</code></a> class.</p>
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td></td>
+<td>The name of the object that you want to create, which will be found in your "Objects" folder.</td>
+</tr>
+<tr>
+<td><code>relativeTo</code></td>
+<td><code>Vector3</code></td>
+<td><code>Magic:GetMyCharacter()</code></td>
+<td>The new object will be created at an offset from this object.</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td><code>float</code></td>
+<td>An offset that places the object in front of <code>relativeTo</code>.</td>
+<td>Determines how far away the newly created object is placed from <code>relativeTo</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="returns">Returns</h2>
+<table>
+<thead>
+<tr>
+<th>Return Type</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../object/"><code>Object</code></a></td>
+<td>The object that was created from the instance.</td>
+</tr>
+</tbody>
+</table>
                 
               
               
@@ -405,10 +432,10 @@ Gets a sub-object thats inside of the object (e.g. a part that is inside a model
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.82b56eb2.min.js"></script>
       
     
   </body>

@@ -321,7 +321,8 @@
                 <h1 id="objectgetsize">Object:GetSize</h1>
 <p>The size of an object is based on its diagonal width. The size of a default character is considered to be the average size of an object, and will return a value of 1. All other sizes are scaled accordingly (i.e. an object with twice the diagonal width of a character model will have a size of 2). The exact calculation for size is as follows:
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">characterDiagonalWidth</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="n">Magnitude</span>
-<span class="kr">return</span> <span class="n">object</span><span class="p">:</span><span class="n">GetDimensions</span><span class="p">().</span><span class="n">Magnitude</span><span class="o">/</span><span class="n">characterDiagonalWidth</span>
+<span class="kd">local</span> <span class="n">objectDiagonalWidth</span> <span class="o">=</span> <span class="n">object</span><span class="p">:</span><span class="n">GetDimensions</span><span class="p">().</span><span class="n">Magnitude</span>
+<span class="kr">return</span> <span class="n">objectDiagonalWidth</span><span class="o">/</span><span class="n">characterDiagonalWidth</span>
 </code></pre></div></p>
                 
               

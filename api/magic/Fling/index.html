@@ -357,19 +357,19 @@
 <td><code>object</code></td>
 <td><a href="../../object/"><code>Object</code></a></td>
 <td></td>
-<td>The object you want to fling.</td>
+<td>The name of the object that you want to create, which will be found in your "Objects" folder.</td>
 </tr>
 <tr>
-<td><code>velocity</code></td>
+<td><code>relativeTo</code></td>
 <td><code>Vector3</code></td>
-<td></td>
-<td>The velocity you want the object to have.</td>
+<td><code>Magic:GetMyCharacter()</code></td>
+<td>The new object will be created at an offset from this object.</td>
 </tr>
 <tr>
-<td><code>duration</code></td>
+<td><code>offset</code></td>
 <td><code>float</code></td>
-<td>0</td>
-<td>The duration that you want to override all other forces for.</td>
+<td>An offset that places the object in front of <code>relativeTo</code>.</td>
+<td>Determines how far away the newly created object is placed from <code>relativeTo</code>.</td>
 </tr>
 </tbody>
 </table>

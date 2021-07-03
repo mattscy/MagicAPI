@@ -343,18 +343,10 @@
                 <h1 id="subscription">Subscription</h1>
 <p><a href="../subscription/"><code>Subscription</code></a> instances are returned from any function in the <a href="../magic/"><code>Magic</code></a> class that charges mana at a continuous rate rather than a one-time payment. When a subscription is cancelled, you stop paying mana for that function, and the effect of the function is stopped. Subscriptions can be cancelled in one of four ways:  </p>
 <ol>
-<li>
-<p>You manually cancel the subscription with <code>Subscription:Cancel()</code>.</p>
-</li>
-<li>
-<p>If any of the objects you are using the function on expire, the subscription will be cancelled. </p>
-</li>
-<li>
-<p>If your mana runs out, all active subscriptions will be cancelled.  </p>
-</li>
-<li>
-<p>When you reuse the same function on the same object, it will cancel the previous subscription. In this case, the <code>overridden</code> parameter of <code>Subscription.Cancelled</code> will be set to true.</p>
-</li>
+<li>You manually cancel the subscription with <code>Subscription:Cancel()</code>.</li>
+<li>If any of the objects you are using the function on expire, the subscription will be cancelled. </li>
+<li>If your mana runs out, all active subscriptions will be cancelled.  </li>
+<li>When you reuse the same function on the same object, it will cancel the previous subscription. In this case, the <code>overridden</code> parameter of <code>Subscription.Cancelled</code> will be set to true.</li>
 </ol>
 <h2 id="functions">Functions</h2>
 <p><code>void Cancel()</code><br />
@@ -365,7 +357,8 @@ Cancels the subscription after the duration passes. </p>
 <p><code>int GetRate()</code></p>
 <p><code>int GetTotalSpent()</code></p>
 <h2 id="events">Events</h2>
-<p><code>Cancelled -&gt; (bool overridden)</code></p>
+<p><code>Cancelled -&gt; (bool overridden)</code>
+Fires when the subscription is cancelled for any reason. Overridden is true if the </p>
                 
               
               
