@@ -9,7 +9,7 @@ This class also lets you retrieve the Character object that represents your char
 `Character GetMyCharacter()`  
 Returns an object that represents your character.
 
-[`Object`][obj]` CreateObject(string name, [`[`Object`][obj]` relativeTo, (Vector3|CFrame) offset])`  
+[`Object`][obj] [`CreateObject`](./CreateObject/)`(string name, [`[`Object`][obj]` relativeTo, (Vector3|CFrame) offset])`  
 Creates a new object from a name.
 
 [`Object`][obj] [`GetObject`](./GetObject/)`(`[`HitDetails`][hit]` hitObjectDetails)`  

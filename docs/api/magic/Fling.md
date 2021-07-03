@@ -4,9 +4,9 @@ Fling can be used to set the velocity of an object instantaneously rather than a
 ## Parameters
 | Name | Type | Default | Description |
 | - | - | - | - |
-| `object` | [`Object`][obj] | | The object you want to fling. |
-| `velocity` | `Vector3` | | The velocity you want the object to have. |
-| `duration` | `float` | 0 | The duration that you want to override all other forces for.
+| `object` | [`Object`][obj] | | The name of the object that you want to create, which will be found in your "Objects" folder. |
+| `relativeTo` | `Vector3` | `Magic:GetMyCharacter()` | The new object will be created at an offset from this object. |
+| `offset` | `float` | An offset that places the object in front of `relativeTo`. | Determines how far away the newly created object is placed from `relativeTo`.
 
 ## Mana
 Larger objects and higher velocities cost more mana.
