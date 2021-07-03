@@ -404,16 +404,16 @@
 <h2 id="mana">Mana</h2>
 <p>Mana is charged at a rate while the subscription is active.</p>
 <h2 id="code-samples">Code Samples</h2>
-<p>The following code heals an object while it is within the detection sphere radius:</p>
-<div class="codehilite"><pre><span></span><code><span class="kd">local</span> <span class="n">detectSub</span><span class="p">,</span> <span class="n">detectionSignal</span> <span class="o">=</span> <span class="n">Magic</span><span class="p">:</span><span class="n">GetSphereDetectionSignal</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+<p>The following code heals an object while it is within the detection sphere radius:
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">detectSub</span><span class="p">,</span> <span class="n">detectionSignal</span> <span class="o">=</span> <span class="n">Magic</span><span class="p">:</span><span class="n">GetSphereDetectionSignal</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
 
-<span class="n">detectionSignal</span><span class="p">:</span><span class="n">Connect</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">hitDetails</span><span class="p">,</span> <span class="n">entered</span><span class="p">)</span>
+<span class="n">detectionSignal</span><span class="p">:</span><span class="n">Connect</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="n">entered</span><span class="p">,</span> <span class="n">hitDetails</span><span class="p">)</span>
     <span class="kr">if</span> <span class="n">entered</span> <span class="kr">then</span>
         <span class="kd">local</span> <span class="n">detectedObject</span> <span class="o">=</span> <span class="n">Magic</span><span class="p">:</span><span class="n">GetObject</span><span class="p">(</span><span class="n">hitDetails</span><span class="p">)</span>
         <span class="kd">local</span> <span class="n">healSub</span> <span class="o">=</span> <span class="n">Magic</span><span class="p">:</span><span class="n">Heal</span><span class="p">(</span><span class="n">detectedObject</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1">--This subscription will be automatically cancelled when the object leaves the radius, as detectedObject will expire.</span>
     <span class="kr">end</span>
 <span class="kr">end</span><span class="p">)</span>
-</code></pre></div>
+</code></pre></div></p>
                 
               
               

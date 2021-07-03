@@ -374,9 +374,13 @@
 </tbody>
 </table>
 <h2 id="mana">Mana</h2>
-<p>Larger objects and higher velocities cost more mana.</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">return</span> <span class="n">object</span><span class="p">:</span><span class="n">GetSize</span><span class="p">()</span><span class="o">*</span><span class="n">velocity</span><span class="p">.</span><span class="n">Magnitude</span>
-</code></pre></div>
+<p>Larger objects and higher velocities cost more mana.
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">cost</span> <span class="o">=</span> <span class="n">object</span><span class="p">:</span><span class="n">GetSize</span><span class="p">()</span><span class="o">*</span><span class="n">velocity</span><span class="p">.</span><span class="n">Magnitude</span>
+<span class="kr">if</span> <span class="n">object</span><span class="p">:</span><span class="n">IsEnemy</span><span class="p">()</span> <span class="kr">then</span>
+    <span class="n">cost</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="kr">end</span>
+<span class="kr">return</span> <span class="n">cost</span>
+</code></pre></div></p>
                 
               
               
