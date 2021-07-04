@@ -13,3 +13,10 @@ This function allows you to convert a [`HitDetails`][hit] into an object that yo
 
 [obj]: ../../object/
 [hit]: ../../hitdetails/
+
+## Mana Cost
+This function does not currently cost any mana.
+```lua
+local cost = 0
+return cost
+```

@@ -20,8 +20,8 @@ Cancels the subscription after the duration passes.
 `int GetTotalSpent()`
 
 ## Events
-`Cancelled -> (bool overridden)`
-Fires when the subscription is cancelled for any reason. Overridden is true if the 
+`Cancelled -> (bool overridden)`  
+Fires when the subscription is cancelled for any reason. Overridden is true if it was cancelled by a new subscription that was created by the same function for the same object.
 
 [sub]: ../subscription/
 [mag]: ../magic/

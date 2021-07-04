@@ -4,16 +4,16 @@ Fling can be used to set the velocity of an object instantaneously rather than a
 ## Parameters
 | Name | Type | Default | Description |
 | - | - | - | - |
-| `object` | [`Object`][obj] | | The name of the object that you want to create, which will be found in your "Objects" folder. |
-| `relativeTo` | `Vector3` | `Magic:GetMyCharacter()` | The new object will be created at an offset from this object. |
-| `offset` | `float` | An offset that places the object in front of `relativeTo`. | Determines how far away the newly created object is placed from `relativeTo`.
+| `object` | [`Object`][obj] | | The object you want to fling. |
+| `velocity` | `Vector3` | | The velocity you want the object to have. |
+| `duration` | `float` | 0 | The duration that you want to override all other forces for. Must be between 0 and 10.
 
-## Mana
-Larger objects and higher velocities cost more mana.
+## Mana Cost
+Larger objects and higher velocities cost more mana. Flinging enemy objects is 10x more expensive, and the `duration` parameter only affects the cost when flinging enemy objects.
 ```lua
-local cost = object:GetSize()*velocity.Magnitude
+local cost = object:GetSize()*velocity.Magnitude*0.1
 if object:IsEnemy() then
-    cost *= 2
+    cost = cost*10 + duration*50
 end
 return cost
 ```

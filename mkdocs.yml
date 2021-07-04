@@ -14,6 +14,8 @@ nav:
     - Object: api/object/
     - Subscription: api/subscription/
     - HitDetails: api/hitdetails/
+  - Articles:
+    - Priority of Forces: articles/forcepriorities/
 
 
 markdown_extensions:

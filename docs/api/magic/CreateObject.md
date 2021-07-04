@@ -13,8 +13,8 @@ The `Part`, `Character` and `Model` classes all inherit from the [`Object`][obj]
 | Name | Type | Default | Description |
 | - | - | - | - |
 | `name` | `string` | | The name of the object that you want to create, which will be found in your "Objects" folder. |
-| `relativeTo` | `Vector3` | `Magic:GetMyCharacter()` | The new object will be created at an offset from this object. |
-| `offset` | `float` | An offset that places the object in front of `relativeTo`. | Determines how far away the newly created object is placed from `relativeTo`.
+| `relativeTo` | [`Object`][obj] | `Magic:GetMyCharacter()` | The new object will be created at an offset from this object. |
+| `offset` | `Vector3` or `CFrame` | An offset that places the object in front of `relativeTo`. | Determines how far away the newly created object is placed from `relativeTo`. The magnitude will be clamped at 50.
 
 ## Returns
 | Return Type | Summary |
@@ -22,3 +22,19 @@ The `Part`, `Character` and `Model` classes all inherit from the [`Object`][obj]
 | [`Object`][obj] | The object that was created from the instance. |
 
 [obj]: ../../object/
+
+## Mana Cost
+Creating any object has a base cost of 50 mana. As well as this, creating larger objects will be more expensive, although objects with a size that is less than 1 will not be cheaper than objects with a size of 1. Objects that are created further away than 20 studs from `relativeTo` also have an additional cost.
+```lua
+local cost = 50 + math.max(1, object:GetSize())*10
+local offsetDistance = 0
+if offset then
+    if type(offset) == "Vector3" then
+        offsetDistance = offset.Magnitude
+    elseif type(offset) == "CFrame" then
+        offsetDistance = offset.Position.Magnitude
+    end
+end
+cost += math.max(0, offsetDistance - 20)*10
+return cost
+```
