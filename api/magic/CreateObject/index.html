@@ -284,6 +284,48 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Articles
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Articles" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Articles
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/forcepriorities/" class="md-nav__link">
+        Priority of Forces
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -319,6 +361,13 @@
         <li class="md-nav__item">
   <a href="#returns" class="md-nav__link">
     Returns
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mana-cost" class="md-nav__link">
+    Mana Cost
   </a>
   
 </li>
@@ -370,15 +419,15 @@
 </tr>
 <tr>
 <td><code>relativeTo</code></td>
-<td><code>Vector3</code></td>
+<td><a href="../../object/"><code>Object</code></a></td>
 <td><code>Magic:GetMyCharacter()</code></td>
 <td>The new object will be created at an offset from this object.</td>
 </tr>
 <tr>
 <td><code>offset</code></td>
-<td><code>float</code></td>
+<td><code>Vector3</code> or <code>CFrame</code></td>
 <td>An offset that places the object in front of <code>relativeTo</code>.</td>
-<td>Determines how far away the newly created object is placed from <code>relativeTo</code>.</td>
+<td>Determines how far away the newly created object is placed from <code>relativeTo</code>. The magnitude will be clamped at 50.</td>
 </tr>
 </tbody>
 </table>
@@ -397,6 +446,20 @@
 </tr>
 </tbody>
 </table>
+<h2 id="mana-cost">Mana Cost</h2>
+<p>Creating any object has a base cost of 50 mana. As well as this, creating larger objects will be more expensive, although objects with a size that is less than 1 will not be cheaper than objects with a size of 1. Objects that are created further away than 20 studs from <code>relativeTo</code> also have an additional cost.
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">cost</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">+</span> <span class="nb">math.max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">object</span><span class="p">:</span><span class="n">GetSize</span><span class="p">())</span><span class="o">*</span><span class="mi">10</span>
+<span class="kd">local</span> <span class="n">offsetDistance</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="kr">if</span> <span class="n">offset</span> <span class="kr">then</span>
+    <span class="kr">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">offset</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Vector3&quot;</span> <span class="kr">then</span>
+        <span class="n">offsetDistance</span> <span class="o">=</span> <span class="n">offset</span><span class="p">.</span><span class="n">Magnitude</span>
+    <span class="kr">elseif</span> <span class="nb">type</span><span class="p">(</span><span class="n">offset</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;CFrame&quot;</span> <span class="kr">then</span>
+        <span class="n">offsetDistance</span> <span class="o">=</span> <span class="n">offset</span><span class="p">.</span><span class="n">Position</span><span class="p">.</span><span class="n">Magnitude</span>
+    <span class="kr">end</span>
+<span class="kr">end</span>
+<span class="n">cost</span> <span class="o">+=</span> <span class="nb">math.max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">offsetDistance</span> <span class="o">-</span> <span class="mi">20</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span>
+<span class="kr">return</span> <span class="n">cost</span>
+</code></pre></div></p>
                 
               
               
