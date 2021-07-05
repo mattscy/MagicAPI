@@ -11,12 +11,12 @@ This function allows you to convert a [`HitDetails`][hit] into an object that yo
 | - | - |
 | [`Object`][obj] | The object that you retrieve from the [`HitDetails`][hit]. This object will expire after any yield. |
 
-[obj]: ../../object/
-[hit]: ../../hitdetails/
-
 ## Mana Cost
 This function does not currently cost any mana.
 ```lua
 local cost = 0
 return cost
 ```
+
+[obj]: ../../object/
+[hit]: ../../hitdetails/

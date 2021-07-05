@@ -1,6 +1,6 @@
 # Magic:GetLingeringObject
 
-This function is an alternative to the [`Magic:GetObject`](../GetObject/) function that allows for a continuous reference to the object that you retrieve from a [`HitDetails`][hit]. The reference to the object will expire once the returned subscription expires.
+This function is an alternative to the [`Magic:GetObject`](../GetObject/) function that allows for a continuous reference to the object that you retrieve from a [`HitDetails`][hit]. The reference to the object will expire once the returned subscription is cancelled.
 
 ## Parameters
 | Name | Type | Default | Description |

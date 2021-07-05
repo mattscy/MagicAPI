@@ -6,44 +6,46 @@ Most of the functions in the `Magic` class cost an amount of mana depending on t
 This class also lets you retrieve the Character object that represents your character using the `Mana:GetMyCharacter` function. Your script will only run after your character is completely loaded every time you respawn, so you don't have to worry about waiting for anything.
 
 ## Functions
-`Character GetMyCharacter()`  
+`Character `**`GetMyCharacter`**`()`  
 Returns an object that represents your character.
 
-[`Object`][obj] [`CreateObject`](./CreateObject/)`(string name, [`[`Object`][obj]` relativeTo, (Vector3|CFrame) offset])`  
+[`Object`][obj] [**`CreateObject`**](./CreateObject/)`(string name, [`[`Object`][obj]` relativeTo, (Vector3|CFrame) offset])`  
 Creates a new object from a name.
 
-[`Object`][obj] [`GetObject`](./GetObject/)`(`[`HitDetails`][hit]` hitObjectDetails)`  
+[`Object`][obj] [**`GetObject`**](./GetObject/)`(`[`HitDetails`][hit]` hitObjectDetails)`  
 Returns an object from a HitDetails that expires immediately.
 
-[`Subscription`][sub]`, `[`Object`][obj] [`GetLingeringObject`](./GetLingeringObject/)`(`[`HitDetails`][hit]` hitObjectDetails)`  
+[`Subscription`][sub]`, `[`Object`][obj] [**`GetLingeringObject`**](./GetLingeringObject/)`(`[`HitDetails`][hit]` hitObjectDetails)`  
 Returns an object from a HitDetails that expires after the subscription is cancelled.
 
-`void ChargeDamage(`[`Object`][obj]` object, int amount)`  
+`void `**`ChargeDamage`**`(`[`Object`][obj]` object, int amount)`  
 Charges an object with an amount of damage.
 
-[`Subscription`][sub]` Follow(`[`Object`][obj]` object, Object target, (Vector3|CFrame) offset)`  
+[`Subscription`][sub]` `**`Follow`**`(`[`Object`][obj]` object, Object target, (Vector3|CFrame) offset)`  
 Makes an object follow a target object at a constant offset.
 
-[`Subscription`][sub]` SetVelocity(`[`Object`][obj]` object, Vector3 velocity)`  
+[`Subscription`][sub]` `**`SetVelocity`**`(`[`Object`][obj]` object, Vector3 velocity)`  
 Gives an object a constant velocity until the subscription is cancelled.
 
-[`Subscription`][sub]` Watch(`[`Object`][obj]` pointing, (`[`Object`][obj]`|Mouse) target, [(Vector3|CFrame) targetOffset])`  
+[`Subscription`][sub]` `**`Watch`**`(`[`Object`][obj]` pointing, (`[`Object`][obj]`|Mouse) target, [(Vector3|CFrame) targetOffset])`  
 Makes an object point towards another object until the subscription is cancelled.
 
-`void LookAt(`[`Object`][obj]` pointing, (`[`Object`][obj]`|Mouse) target, [(Vector3|CFrame) targetOffset])`  
+`void `**`LookAt`**`(`[`Object`][obj]` pointing, (`[`Object`][obj]`|Mouse) target, [(Vector3|CFrame) targetOffset])`  
 Makes an object point towards another object.
 
-`void `[`Fling`](./Fling/)`(`[`Object`][obj]` object, Vector3 velocity, [float duration])`  
+`void `[**`Fling`**](./Fling/)`(`[`Object`][obj]` object, Vector3 velocity, [float duration])`  
 Gives an object an instantaneous thrust that overrides all other forces until the duration passes.
 
-[`Subscription`][sub]`, RBXScriptSignal -> (bool entered, `[`HitDetails`][hit]` detectedDetails)  `[`GetSphereDetectionSignal`](./GetSphereDetectionSignal/)`(`[`Object`][obj]` detecting, float radius)`  
+`void `[**`Resize`**](./Resize/)`(`[`Object`][obj]` object, (float|TweenInfo) resizeInfo)`
+
+[`Subscription`][sub]`, RBXScriptSignal -> (bool entered, `[`HitDetails`][hit]` detectedDetails)  `[**`GetSphereDetectionSignal`**](./GetSphereDetectionSignal/)`(`[`Object`][obj]` detecting, float radius)`  
 Returns an event that fires when something enters the radius of an object until the subscription is cancelled.
 
-`void Overdrive(bool enabled)`  
+`void `**`Overdrive`**`(bool enabled)`  
 Allows health to be spent as mana when enabled.
 
 ## Events
-`ManaChanged -> (int currentMana, int maxMana)`
+**`ManaChanged`**` -> (int currentMana, int maxMana)`
 
 [obj]: ../object/
 [sub]: ../subscription/

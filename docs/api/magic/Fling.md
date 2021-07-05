@@ -11,7 +11,7 @@ Fling can be used to set the velocity of an object instantaneously rather than a
 ## Mana Cost
 Larger objects and higher velocities cost more mana. Flinging enemy objects is 10x more expensive, and the `duration` parameter only affects the cost when flinging enemy objects.
 ```lua
-local cost = object:GetSize()*velocity.Magnitude*0.1
+local cost = object:GetScale()*velocity.Magnitude*0.1
 if object:IsEnemy() then
     cost = cost*10 + duration*50
 end

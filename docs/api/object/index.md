@@ -11,10 +11,10 @@ After a certain amount of time passes, an object will expire, and you can no lon
 However, some [`HitDetails`][hit] objects have an associated lifetime that will be used instead of the above conditions. For example, the [`HitDetails`][hit] that is obtained from [`Magic:GetSphereDetectionSignal`](../magic/GetSphereDetectionSignal/) when `entered` is true will give an object that expires after the object leaves the radius, rather than after an amount of time.
 
 ## Functions
-`float `[`GetSize`](./GetSize/)`()`  
-Returns the size of the object based on its diagonal width.
+`float `[`GetScale`](./GetScale/)`()`  
+Returns the scale of the object based on its diagonal width.
 
-`Vector3 GetDimensions()`  
+`Vector3 GetSize()`  
 Returns the length, height and width of the object.
 
 `Vector3 GetVelocity()`
