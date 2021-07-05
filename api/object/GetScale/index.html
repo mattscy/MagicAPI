@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://mattscy.github.io/MagicAPI/api/magic/GetLingeringObject/">
+        <link rel="canonical" href="https://mattscy.github.io/MagicAPI/api/object/GetScale/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
-        <title>Magic:GetLingeringObject - My Docs</title>
+        <title>Object:GetScale - My Docs</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#magicgetlingeringobject" class="md-skip">
+        <a href="#objectgetscale" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Magic:GetLingeringObject
+              Object:GetScale
             
           </span>
         </div>
@@ -235,7 +235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../magic/" class="md-nav__link">
         Magic
       </a>
     </li>
@@ -247,7 +247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../object/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Object
       </a>
     </li>
@@ -345,35 +345,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mana-cost" class="md-nav__link">
-    Mana Cost
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -384,63 +355,16 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mattscy/MagicAPI/edit/master/docs/api/magic/GetLingeringObject.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mattscy/MagicAPI/edit/master/docs/api/object/GetScale.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="magicgetlingeringobject">Magic:GetLingeringObject</h1>
-<p>This function is an alternative to the <a href="../GetObject/"><code>Magic:GetObject</code></a> function that allows for a continuous reference to the object that you retrieve from a <a href="../../hitdetails/"><code>HitDetails</code></a>. The reference to the object will expire once the returned subscription is cancelled.</p>
-<h2 id="parameters">Parameters</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>hitObjectDetails</code></td>
-<td><a href="../../hitdetails/"><code>HitDetails</code></a></td>
-<td></td>
-<td>The <a href="../../hitdetails/"><code>HitDetails</code></a> of the object that you have detected.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="returns">Returns</h2>
-<table>
-<thead>
-<tr>
-<th>Return Type</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../../subscription/"><code>Subscription</code></a></td>
-<td>When this subscription is cancelled, the returned object will expire.</td>
-</tr>
-<tr>
-<td><a href="../../object/"><code>Object</code></a></td>
-<td>The object that you retrieve from the <a href="../../hitdetails/"><code>HitDetails</code></a>. This object will expire after the returned subscription is cancelled.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="mana-cost">Mana Cost</h2>
-<p>There is no immediate cost for getting a lingering object. The cost rate of the subscription is determined by the type of the detected object.
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">cost</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="kd">local</span> <span class="n">subCost</span>
-<span class="kr">if</span> <span class="n">hitObjectDetails</span><span class="p">:</span><span class="n">IsMine</span><span class="p">()</span> <span class="kr">then</span>
-    <span class="n">subCost</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="kr">elseif</span> <span class="n">hitObjectDetails</span><span class="p">:</span><span class="n">IsFriendly</span><span class="p">()</span> <span class="kr">then</span>
-    <span class="n">subCost</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="kr">elseif</span> <span class="n">hitObjectDetails</span><span class="p">:</span><span class="n">IsEnemy</span><span class="p">()</span> <span class="kr">then</span>
-    <span class="n">subCost</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="kr">end</span>
-<span class="kr">return</span> <span class="n">cost</span><span class="p">,</span> <span class="n">subCost</span>
+                <h1 id="objectgetscale">Object:GetScale</h1>
+<p>The scale of an object is based on its diagonal width. The scale of a default character is considered to be the average scale of an object, and will return a value of 1. All other scales are adjusted accordingly (i.e. an object with twice the diagonal width of a character model will have a scale of 2). The exact calculation for scale is as follows:
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">characterDiagonalWidth</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="n">Magnitude</span>
+<span class="kd">local</span> <span class="n">objectDiagonalWidth</span> <span class="o">=</span> <span class="n">object</span><span class="p">:</span><span class="n">GetDimensions</span><span class="p">().</span><span class="n">Magnitude</span>
+<span class="kr">return</span> <span class="n">objectDiagonalWidth</span><span class="o">/</span><span class="n">characterDiagonalWidth</span>
 </code></pre></div></p>
                 
               

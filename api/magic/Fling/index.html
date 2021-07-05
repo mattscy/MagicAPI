@@ -417,7 +417,7 @@
 </table>
 <h2 id="mana-cost">Mana Cost</h2>
 <p>Larger objects and higher velocities cost more mana. Flinging enemy objects is 10x more expensive, and the <code>duration</code> parameter only affects the cost when flinging enemy objects.
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">cost</span> <span class="o">=</span> <span class="n">object</span><span class="p">:</span><span class="n">GetSize</span><span class="p">()</span><span class="o">*</span><span class="n">velocity</span><span class="p">.</span><span class="n">Magnitude</span><span class="o">*</span><span class="mf">0.1</span>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">cost</span> <span class="o">=</span> <span class="n">object</span><span class="p">:</span><span class="n">GetScale</span><span class="p">()</span><span class="o">*</span><span class="n">velocity</span><span class="p">.</span><span class="n">Magnitude</span><span class="o">*</span><span class="mf">0.1</span>
 <span class="kr">if</span> <span class="n">object</span><span class="p">:</span><span class="n">IsEnemy</span><span class="p">()</span> <span class="kr">then</span>
     <span class="n">cost</span> <span class="o">=</span> <span class="n">cost</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="n">duration</span><span class="o">*</span><span class="mi">50</span>
 <span class="kr">end</span>

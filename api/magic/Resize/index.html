@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://mattscy.github.io/MagicAPI/api/object/GetSize/">
+        <link rel="canonical" href="https://mattscy.github.io/MagicAPI/api/magic/Resize/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
-        <title>Object:GetSize - My Docs</title>
+        <title>Magic:Resize - My Docs</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#objectgetsize" class="md-skip">
+        <a href="#magicresize" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Object:GetSize
+              Magic:Resize
             
           </span>
         </div>
@@ -235,7 +235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../magic/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Magic
       </a>
     </li>
@@ -247,7 +247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../object/" class="md-nav__link">
         Object
       </a>
     </li>
@@ -345,6 +345,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -355,17 +370,42 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mattscy/MagicAPI/edit/master/docs/api/object/GetSize.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mattscy/MagicAPI/edit/master/docs/api/magic/Resize.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="objectgetsize">Object:GetSize</h1>
-<p>The size of an object is based on its diagonal width. The size of a default character is considered to be the average size of an object, and will return a value of 1. All other sizes are scaled accordingly (i.e. an object with twice the diagonal width of a character model will have a size of 2). The exact calculation for size is as follows:
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">characterDiagonalWidth</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="n">Magnitude</span>
-<span class="kd">local</span> <span class="n">objectDiagonalWidth</span> <span class="o">=</span> <span class="n">object</span><span class="p">:</span><span class="n">GetDimensions</span><span class="p">().</span><span class="n">Magnitude</span>
-<span class="kr">return</span> <span class="n">objectDiagonalWidth</span><span class="o">/</span><span class="n">characterDiagonalWidth</span>
-</code></pre></div></p>
+                <h1 id="magicresize">Magic:Resize</h1>
+<p>The resize function lets you transition the object from one size to another in an amount of time. A <code>TweenInfo</code> instance can be used instead of a number for the <code>resizeInfo</code> parameter if you want to customise the easing style and direction of the transition.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Resizing <code>Model</code> objects may not work as expected unless the new size has the same length:height:width ratio as the original size.</p>
+</div>
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>object</code></td>
+<td><a href="../../Object/"><code>Object</code></a></td>
+<td></td>
+<td>The object that you are resizing.</td>
+</tr>
+<tr>
+<td><code>resizeInfo</code></td>
+<td><code>float</code> or <code>TweenInfo</code></td>
+<td>1</td>
+<td>The time you want the resize to take. If a <code>TweenInfo</code> is used, the <code>DelayTime</code>, <code>RepeatCount</code> and <code>Reverses</code> properties will be ignored.</td>
+</tr>
+</tbody>
+</table>
                 
               
               

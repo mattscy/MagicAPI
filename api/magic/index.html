@@ -387,32 +387,33 @@
 <p>Most of the functions in the <code>Magic</code> class cost an amount of mana depending on the arguments that you give. For example, the <a href="./Fling/"><code>Magic:Fling</code></a> function can be used to fling an object by temporarily setting its velocity. However, using a velocity with a larger magnitude will cost more mana. It is also important keep in mind that using functions on enemy objects is often more expensive than using the same functions on friendly objects.</p>
 <p>This class also lets you retrieve the Character object that represents your character using the <code>Mana:GetMyCharacter</code> function. Your script will only run after your character is completely loaded every time you respawn, so you don't have to worry about waiting for anything.</p>
 <h2 id="functions">Functions</h2>
-<p><code>Character GetMyCharacter()</code><br />
+<p><code>Character</code><strong><code>GetMyCharacter</code></strong><code>()</code><br />
 Returns an object that represents your character.</p>
-<p><a href="../object/"><code>Object</code></a> <a href="./CreateObject/"><code>CreateObject</code></a><code>(string name, [</code><a href="../object/"><code>Object</code></a><code>relativeTo, (Vector3|CFrame) offset])</code><br />
+<p><a href="../object/"><code>Object</code></a> <a href="./CreateObject/"><strong><code>CreateObject</code></strong></a><code>(string name, [</code><a href="../object/"><code>Object</code></a><code>relativeTo, (Vector3|CFrame) offset])</code><br />
 Creates a new object from a name.</p>
-<p><a href="../object/"><code>Object</code></a> <a href="./GetObject/"><code>GetObject</code></a><code>(</code><a href="../hitdetails/"><code>HitDetails</code></a><code>hitObjectDetails)</code><br />
+<p><a href="../object/"><code>Object</code></a> <a href="./GetObject/"><strong><code>GetObject</code></strong></a><code>(</code><a href="../hitdetails/"><code>HitDetails</code></a><code>hitObjectDetails)</code><br />
 Returns an object from a HitDetails that expires immediately.</p>
-<p><a href="../subscription/"><code>Subscription</code></a><code>,</code><a href="../object/"><code>Object</code></a> <a href="./GetLingeringObject/"><code>GetLingeringObject</code></a><code>(</code><a href="../hitdetails/"><code>HitDetails</code></a><code>hitObjectDetails)</code><br />
+<p><a href="../subscription/"><code>Subscription</code></a><code>,</code><a href="../object/"><code>Object</code></a> <a href="./GetLingeringObject/"><strong><code>GetLingeringObject</code></strong></a><code>(</code><a href="../hitdetails/"><code>HitDetails</code></a><code>hitObjectDetails)</code><br />
 Returns an object from a HitDetails that expires after the subscription is cancelled.</p>
-<p><code>void ChargeDamage(</code><a href="../object/"><code>Object</code></a><code>object, int amount)</code><br />
+<p><code>void</code><strong><code>ChargeDamage</code></strong><code>(</code><a href="../object/"><code>Object</code></a><code>object, int amount)</code><br />
 Charges an object with an amount of damage.</p>
-<p><a href="../subscription/"><code>Subscription</code></a><code>Follow(</code><a href="../object/"><code>Object</code></a><code>object, Object target, (Vector3|CFrame) offset)</code><br />
+<p><a href="../subscription/"><code>Subscription</code></a><code></code><strong><code>Follow</code></strong><code>(</code><a href="../object/"><code>Object</code></a><code>object, Object target, (Vector3|CFrame) offset)</code><br />
 Makes an object follow a target object at a constant offset.</p>
-<p><a href="../subscription/"><code>Subscription</code></a><code>SetVelocity(</code><a href="../object/"><code>Object</code></a><code>object, Vector3 velocity)</code><br />
+<p><a href="../subscription/"><code>Subscription</code></a><code></code><strong><code>SetVelocity</code></strong><code>(</code><a href="../object/"><code>Object</code></a><code>object, Vector3 velocity)</code><br />
 Gives an object a constant velocity until the subscription is cancelled.</p>
-<p><a href="../subscription/"><code>Subscription</code></a><code>Watch(</code><a href="../object/"><code>Object</code></a><code>pointing, (</code><a href="../object/"><code>Object</code></a><code>|Mouse) target, [(Vector3|CFrame) targetOffset])</code><br />
+<p><a href="../subscription/"><code>Subscription</code></a><code></code><strong><code>Watch</code></strong><code>(</code><a href="../object/"><code>Object</code></a><code>pointing, (</code><a href="../object/"><code>Object</code></a><code>|Mouse) target, [(Vector3|CFrame) targetOffset])</code><br />
 Makes an object point towards another object until the subscription is cancelled.</p>
-<p><code>void LookAt(</code><a href="../object/"><code>Object</code></a><code>pointing, (</code><a href="../object/"><code>Object</code></a><code>|Mouse) target, [(Vector3|CFrame) targetOffset])</code><br />
+<p><code>void</code><strong><code>LookAt</code></strong><code>(</code><a href="../object/"><code>Object</code></a><code>pointing, (</code><a href="../object/"><code>Object</code></a><code>|Mouse) target, [(Vector3|CFrame) targetOffset])</code><br />
 Makes an object point towards another object.</p>
-<p><code>void</code><a href="./Fling/"><code>Fling</code></a><code>(</code><a href="../object/"><code>Object</code></a><code>object, Vector3 velocity, [float duration])</code><br />
+<p><code>void</code><a href="./Fling/"><strong><code>Fling</code></strong></a><code>(</code><a href="../object/"><code>Object</code></a><code>object, Vector3 velocity, [float duration])</code><br />
 Gives an object an instantaneous thrust that overrides all other forces until the duration passes.</p>
-<p><a href="../subscription/"><code>Subscription</code></a><code>, RBXScriptSignal -&gt; (bool entered,</code><a href="../hitdetails/"><code>HitDetails</code></a><code>detectedDetails)</code><a href="./GetSphereDetectionSignal/"><code>GetSphereDetectionSignal</code></a><code>(</code><a href="../object/"><code>Object</code></a><code>detecting, float radius)</code><br />
+<p><code>void</code><a href="./Resize/"><strong><code>Resize</code></strong></a><code>(</code><a href="../object/"><code>Object</code></a><code>object, (float|TweenInfo) resizeInfo)</code></p>
+<p><a href="../subscription/"><code>Subscription</code></a><code>, RBXScriptSignal -&gt; (bool entered,</code><a href="../hitdetails/"><code>HitDetails</code></a><code>detectedDetails)</code><a href="./GetSphereDetectionSignal/"><strong><code>GetSphereDetectionSignal</code></strong></a><code>(</code><a href="../object/"><code>Object</code></a><code>detecting, float radius)</code><br />
 Returns an event that fires when something enters the radius of an object until the subscription is cancelled.</p>
-<p><code>void Overdrive(bool enabled)</code><br />
+<p><code>void</code><strong><code>Overdrive</code></strong><code>(bool enabled)</code><br />
 Allows health to be spent as mana when enabled.</p>
 <h2 id="events">Events</h2>
-<p><code>ManaChanged -&gt; (int currentMana, int maxMana)</code></p>
+<p><strong><code>ManaChanged</code></strong><code>-&gt; (int currentMana, int maxMana)</code></p>
                 
               
               

@@ -376,7 +376,11 @@
                 
                 
                 <h1 id="hitdetails">HitDetails</h1>
-<p>A <code>HitDetails</code> instance is given whenever you detect another object, such as through the <code>Touched</code> event. The purpose of this class is to let you check the details of an object that you have detected before you decide to pay for a reference to it. If you do decide that you want a reference, you can pay for the object with the <code>Magic:GetObject</code> or <code>Magic:GetLingeringObject</code> methods. For balancing reasons, <code>HitDetails</code> instances expire as soon as there is any yield, so you can't wait before getting an object from a <code>HitDetails</code>.</p>
+<p>A <code>HitDetails</code> instance is given whenever you detect another object, such as through the <code>Touched</code> event. The purpose of this class is to let you check the details of an object that you have detected before you decide to pay for a reference to it. If you do decide that you want a reference, you can get the object with the <code>Magic:GetObject</code> or <code>Magic:GetLingeringObject</code> methods. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For balancing reasons, <code>HitDetails</code> instances expire as soon as there is any yield, so you can't wait before getting an object from a <code>HitDetails</code>.</p>
+</div>
 <h2 id="functions">Functions</h2>
 <p><code>bool IsEnemy()</code></p>
 <p><code>bool IsFriendly()</code></p>
